@@ -8,6 +8,7 @@ $I->wantTo('check if bad URL request is forbidden');
 $I->amOnPage('/?q=%2e%2e');
 $I->seeResponseCodeIs(HttpCode::FORBIDDEN);
 
+
 /* Should see home page */
 $I->amOnPage('/');
 $I->seeResponseCodeIs(HttpCode::OK);
