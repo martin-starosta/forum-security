@@ -1,0 +1,14 @@
+{
+    "name": "starosta/forum-security",
+    "description": "Forum Security features for Wordpress",
+    "require-dev": {
+    },
+    "license": "GPL-3.0",
+    "authors": [{
+        "name": "Martin Starosta",
+        "email": "martin@mayorsoft.eu"
+    }],
+    "require": {
+        "codeception/codeception": "^2.2"
+    }
+}

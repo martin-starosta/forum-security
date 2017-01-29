@@ -15,6 +15,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 require_once plugin_dir_path( __FILE__ ) . 'includes/fsp.php';
 
+
 function run_forum_security() {
 
 	$plugin = new ForumSecurity();

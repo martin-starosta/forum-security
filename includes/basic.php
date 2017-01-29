@@ -11,6 +11,7 @@ class BasicSecurityTweaks {
         $query_string = $_SERVER['QUERY_STRING'];
         $user_agent = $_SERVER['HTTP_USER_AGENT'];
 
+        //TODO: Overuje sa len ak to ide cez WP - ako to fixnes ?:-)
         if (	//strlen($request_uri) > 255 || 
                 stripos($request_uri, 'eval(') || 
                 stripos($request_uri, 'CONCAT') || 
@@ -102,7 +103,11 @@ class BasicSecurityTweaks {
         }
     }
 
-    public function removeVersion() {
+    /**
+    * Function removes or replaces Wordpress version
+    * in head meta tag.
+    */
+    public function handleWPVersion() {
         //remove_action('wp_head', 'wp_generator');
         add_filter( 'the_generator', function ( $html, $type ) { 
             return sprintf( '<meta name="generator" content="%s CMS"/>', get_bloginfo( 'name' ));

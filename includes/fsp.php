@@ -2,6 +2,9 @@
 
 require_once 'basic.php';
 
+/**
+* Enhances Wordpress security.
+*/
 class ForumSecurity {
 
     public function __construct() {
@@ -15,7 +18,7 @@ class ForumSecurity {
         $tweaks = new BasicSecurityTweaks();
         
         $tweaks->blockMaliciousUrlRequests();
-        $tweaks->removeVersion();
+        $tweaks->handleWPVersion();
     }
 
     public function fsp_activate() {
@@ -24,9 +27,5 @@ class ForumSecurity {
 
      public function fps_deactivate() {
         echo 'Forum Security Plugin has been deactivated';
-    }
-
-    public static function head() {
-        echo '<style>/* This is from FSP. */</style>';
     }
 }

@@ -6,6 +6,6 @@ gulp.task('watch', function() {
 });
 
 gulp.task('build', function() {
-    gulp.src('**/*')
+    gulp.src(['**/*', '!.git/*'])
         .pipe(gulp.dest('../kam-wp/wp-content/plugins/forum-security'));
 });
